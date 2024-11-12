@@ -1,9 +1,11 @@
 import asyncio
+import json
+
 from database.core import  StorageHandler
 
 
 async def test_start():
-    await StorageHandler.update_database(data_1)
+    await StorageHandler.update_database(data)
 
 data_1 = [
     {
@@ -26,7 +28,7 @@ data_1 = [
         "color": "SILVER",
         "has_keys": "YES",
         "buy_it_now_price": 0.0,
-        "buy_it_now_flag": False,
+        "buy_it_now_flag": True,
         "seller_reserve_met": None,
         "current_bid": 0.0,
         "photo": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/lpp/1124/01e165bfe607454b9e244175aa3e0bf2_thb.jpg",
@@ -60,7 +62,12 @@ data_1 = [
     },
 ]
 
+with open('saved_data_test.json', 'r') as file:
+    data = json.load(file)
+
+
+
 
 if __name__ == "__main__":
     asyncio.run(test_start())
-
+    # print(type(data))

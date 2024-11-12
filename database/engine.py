@@ -1,18 +1,22 @@
 from typing import Annotated
 
-from sqlalchemy import String
+from sqlalchemy import String, create_engine
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
-from sqlalchemy.orm import DeclarativeBase
+from sqlalchemy.orm import DeclarativeBase, sessionmaker
 
 from config import settings
+
+sync_engine = create_engine(
+url = settings.db_url_psycopg,
+    echo=True,
+)
 
 async_engine = create_async_engine(
     url = settings.db_url_asyncpg,
     echo=True,
-    # pool_size=5,
-    # max_overflow=10,
 )
 
+sync_session_factory = sessionmaker(sync_engine)
 async_session_factory = async_sessionmaker(async_engine)
 
 str_10 = Annotated[str, 10]

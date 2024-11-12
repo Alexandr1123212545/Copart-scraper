@@ -21,8 +21,8 @@ class Storage:
         self.__data.extend(data)
 
     def save_data(self):
-        json_data = json.dumps(self.__data, ensure_ascii=False, indent=4)
-        with open('saved_data_test.json', 'w', encoding='utf-8') as file:
-            file.write(json_data)
+        # json_data = json.dumps(self.__data, ensure_ascii=False, indent=4)
+        # with open('saved_data_test.json', 'w', encoding='utf-8') as file:
+        #     file.write(json_data)
         from database.core import StorageHandler
-        # StorageHandler.update_data(self.__data)
+        StorageHandler.update_data(self.__data)

@@ -1,25 +1,14 @@
+from dotenv import get_key
 
-class A:
+my_dict = {
+    'key_1': {'key_01': 'value_01'},
+    'key_2': {'key_02': 'value_02'},
 
-
-    @classmethod
-    def method_1(cls, some_field: dict) -> None:
-        some_field['key_1'] = 'new_value_1'
-        some_field['key_2'] = 'value_2'
-
-    @classmethod
-    def method_2(cls):
-
-        my_dict = {
-            'field_1': {},
-            'field_2': {}
-        }
-        print(my_dict)
-        cls.method_1(my_dict['field_1'])
-        print(my_dict)
+}
 
 if __name__ == "__main__":
-    A.method_2()
+   res = my_dict.get('key_3', {}).get('key_01', None)
+   print(res)
 
 
 

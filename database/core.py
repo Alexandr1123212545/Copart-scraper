@@ -4,7 +4,8 @@ from sqlalchemy import update, delete, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from database import models, engine
-from database.engine import async_session_factory
+from database.engine import async_session_factory, sync_session_factory
+from database.models import MainDataORM
 
 
 class StorageHandler:
@@ -54,9 +55,16 @@ class StorageHandler:
         cache_dict[value] = new_record.id
         return new_record.id
 
+    @staticmethod
+    def bulk_update(data_to_update: list) -> None:
+        with sync_session_factory() as session:
+            session.bulk_update_mappings(models.MainDataORM, data_to_update)
+            session.commit()
+
     @classmethod
     async def load_all_related_data(cls, session: AsyncSession) -> dict:
         related_models = {
+            'lot_id': (models.MainDataORM, 'lot_number', 'id'),
             'make': (models.MakeORM, 'tittle', 'id'),
             'model': (models.ModelORM, 'tittle', 'id'),
             'highlights': (models.HighlightORM, 'tittle', 'id'),
@@ -97,6 +105,8 @@ class StorageHandler:
 
         # Preparing data
         for lot in lots:
+            lot_num = lot["lot_number"]
+            lot_id = related_data["lot_id"].get(lot_num, None)
             make_id = await cls.get_or_create_related(
                     session, models.MakeORM, "tittle", lot["make"], related_data['make'])
             model_id = await cls.get_or_create_related(
@@ -121,14 +131,17 @@ class StorageHandler:
             # Preparing to update existing data
             if lot["lot_number"] in existing_lots:
                 lots_to_update.append({
+                    "id": lot_id,
                     "lot_number": lot["lot_number"],
                     "buy_it_now_price": lot["buy_it_now_price"],
                     "buy_it_now_flag": lot["buy_it_now_flag"],
                     "current_bid": lot["current_bid"]
                 })
+
             # Preparing to insert new data
             else:
                 lots_to_insert.append({
+                    "lot_number": lot["lot_number"],
                     "make_id": make_id,
                     "model_id": model_id,
                     "highlight_id": highlight_id,
@@ -156,7 +169,8 @@ class StorageHandler:
 
         # Update new data
         if lots_to_update:
-            await session.bulk_update_mappings(models.MainDataORM, lots_to_update)
+            await asyncio.to_thread(cls.bulk_update, lots_to_update)
+            # await session.bulk_update_mappings(models.MainDataORM, lots_to_update)
 
         # Insert new data
         if lots_to_insert:
