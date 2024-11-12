@@ -1,9 +1,9 @@
 from enum import Enum
-from typing import Annotated, List
+from typing import Annotated
 import datetime
 
 from sqlalchemy import ForeignKey, BigInteger, SmallInteger, text
-from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy.orm import Mapped, mapped_column
 
 from database.engine import Base, str_10, str_17, str_30, str_50, str_100
 
@@ -35,16 +35,16 @@ class UserFilterORM(Base):
 
     id: Mapped[int_pk]
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"))
-    make_id: Mapped[int | None] = mapped_column(ForeignKey("makes.id", ondelete="SET NULL"))
-    model_id: Mapped[int | None] = mapped_column(ForeignKey("models.id", ondelete="SET NULL"))
+    make_id: Mapped[int | None] = mapped_column(ForeignKey("make.id", ondelete="SET NULL"))
+    model_id: Mapped[int | None] = mapped_column(ForeignKey("model.id", ondelete="SET NULL"))
     highlight_id: Mapped[int | None] = mapped_column(ForeignKey("highlights.id", ondelete="SET NULL"))
-    primary_damage_id: Mapped[int | None] =  mapped_column(ForeignKey("damage_types.id", ondelete="SET NULL"))
-    secondary_damage_id: Mapped[int | None] =  mapped_column(ForeignKey("damage_types.id", ondelete="SET NULL"))
-    body_id: Mapped[int | None] = mapped_column(ForeignKey("body_styles.id", ondelete="SET NULL"))
-    engine_id: Mapped[int | None] =  mapped_column(ForeignKey("engine_types.id", ondelete="SET NULL"))
-    transmission_id: Mapped[int | None] =  mapped_column(ForeignKey("transmission_types.id", ondelete="SET NULL"))
-    drive_id: Mapped[int | None] = mapped_column(ForeignKey("drive_types.id", ondelete="SET NULL"))
-    fuel_id: Mapped[int | None] = mapped_column(ForeignKey("fuel_types.id", ondelete="SET NULL"))
+    primary_damage_id: Mapped[int | None] =  mapped_column(ForeignKey("damage.id", ondelete="SET NULL"))
+    secondary_damage_id: Mapped[int | None] =  mapped_column(ForeignKey("damage.id", ondelete="SET NULL"))
+    body_id: Mapped[int | None] = mapped_column(ForeignKey("body.id", ondelete="SET NULL"))
+    motor_id: Mapped[int | None] =  mapped_column(ForeignKey("motor.id", ondelete="SET NULL"))
+    transmission_id: Mapped[int | None] =  mapped_column(ForeignKey("transmission.id", ondelete="SET NULL"))
+    drive_id: Mapped[int | None] = mapped_column(ForeignKey("drive.id", ondelete="SET NULL"))
+    fuel_id: Mapped[int | None] = mapped_column(ForeignKey("fuel.id", ondelete="SET NULL"))
     price_min: Mapped[float | None]
     price_max: Mapped[float | None]
     odometer_min: Mapped[float | None]
@@ -58,18 +58,18 @@ class MainDataORM(Base):
     __tablename__ = "main_data"
 
     id: Mapped[int_pk_big]
-    make_id: Mapped[int | None] = mapped_column(ForeignKey("makes.id", ondelete="SET NULL"))
-    model_id: Mapped[int | None] = mapped_column(ForeignKey("models.id", ondelete="SET NULL"))
-    highlight_id: Mapped[int | None] = mapped_column(ForeignKey("highlights.id", ondelete="SET NULL"))
-    primary_damage_id: Mapped[int | None] =  mapped_column(ForeignKey("damage_types.id", ondelete="SET NULL"))
-    secondary_damage_id: Mapped[int | None] =  mapped_column(ForeignKey("damage_types.id", ondelete="SET NULL"))
-    body_id: Mapped[int | None] = mapped_column(ForeignKey("body_styles.id", ondelete="SET NULL"))
-    engine_id: Mapped[int | None] =  mapped_column(ForeignKey("engine_types.id", ondelete="SET NULL"))
-    transmission_id: Mapped[int | None] =  mapped_column(ForeignKey("transmission_types.id", ondelete="SET NULL"))
-    drive_id: Mapped[int | None] = mapped_column(ForeignKey("drive_types.id", ondelete="SET NULL"))
-    fuel_id: Mapped[int | None] = mapped_column(ForeignKey("fuel_types.id", ondelete="SET NULL"))
-    release_date: Mapped[int_small | None]
     lot_number: Mapped[int_big | None] = mapped_column(index=True)
+    make_id: Mapped[int | None] = mapped_column(ForeignKey("make.id", ondelete="SET NULL"), nullable=True)
+    model_id: Mapped[int | None] = mapped_column(ForeignKey("model.id", ondelete="SET NULL"), nullable=True)
+    highlight_id: Mapped[int | None] = mapped_column(ForeignKey("highlights.id", ondelete="SET NULL"), nullable=True)
+    primary_damage_id: Mapped[int | None] =  mapped_column(ForeignKey("damage.id", ondelete="SET NULL"), nullable=True)
+    secondary_damage_id: Mapped[int | None] =  mapped_column(ForeignKey("damage.id", ondelete="SET NULL"), nullable=True)
+    body_id: Mapped[int | None] = mapped_column(ForeignKey("body.id", ondelete="SET NULL"), nullable=True)
+    motor_id: Mapped[int | None] =  mapped_column(ForeignKey("motor.id", ondelete="SET NULL"), nullable=True)
+    transmission_id: Mapped[int | None] =  mapped_column(ForeignKey("transmission.id", ondelete="SET NULL"), nullable=True)
+    drive_id: Mapped[int | None] = mapped_column(ForeignKey("drive.id", ondelete="SET NULL"), nullable=True)
+    fuel_id: Mapped[int | None] = mapped_column(ForeignKey("fuel.id", ondelete="SET NULL"), nullable=True)
+    release_date: Mapped[int_small | None]
     trim_level: Mapped[str_50 | None]
     vin_code: Mapped[str_17 | None]
     odometer: Mapped[float | None]
@@ -84,62 +84,60 @@ class MainDataORM(Base):
     lot_link: Mapped[str | None]
 
 class MakeORM(Base):
-    __tablename__ = "makes"
+    __tablename__ = "make"
 
     id: Mapped[int_pk]
-    make: Mapped[str | None]
+    tittle: Mapped[str | None]
 
 class ModelORM(Base):
-    __tablename__ = "models"
+    __tablename__ = "model"
 
     id: Mapped[int_pk]
-    model: Mapped[str]
-    make_id: Mapped[int] = mapped_column(ForeignKey("makes.id", ondelete="CASCADE"))
+    tittle: Mapped[str]
+    make_id: Mapped[int] = mapped_column(ForeignKey("make.id", ondelete="CASCADE"))
 
 class DamageTypeORM(Base):
-    __tablename__ = "damage_types"
+    __tablename__ = "damage"
 
     id: Mapped[int_pk]
-    damage: Mapped[str]
+    tittle: Mapped[str]
 
 class DriveTypeORM(Base):
-    __tablename__ = "drive_types"
+    __tablename__ = "drive"
 
     id: Mapped[int_pk]
-    drive: Mapped[str]
+    tittle: Mapped[str]
 
-class EngineTypeORM(Base):
-    __tablename__ = "engine_types"
+class MotorTypeORM(Base):
+    __tablename__ = "motor"
 
     id: Mapped[int_pk]
-    engine: Mapped[str]
+    tittle: Mapped[str]
 
 class TransmissionTypeORM(Base):
-    __tablename__ = "transmission_types"
+    __tablename__ = "transmission"
 
     id: Mapped[int_pk]
-    transmission: Mapped[str]
+    tittle: Mapped[str]
 
 class FuelTypeORM(Base):
-    __tablename__ = "fuel_types"
+    __tablename__ = "fuel"
 
     id: Mapped[int_pk]
-    fuel: Mapped[str]
+    tittle: Mapped[str]
 
 class BodyStyleORM(Base):
-    __tablename__ = "body_styles"
+    __tablename__ = "body"
 
     id: Mapped[int_pk]
-    body: Mapped[str]
-
-class OdometerStatusORM(Base):
-    __tablename__ = "odometer_statuses"
-
-    id: Mapped[int_pk]
-    status: Mapped[str]
+    tittle: Mapped[str]
 
 class HighlightORM(Base):
     __tablename__ = "highlights"
 
     id: Mapped[int_pk]
-    descriptions: Mapped[str]
+    tittle: Mapped[str]
+
+
+if __name__ == "__main__":
+    ...

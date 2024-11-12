@@ -18,9 +18,11 @@ BASE_URL = os.getenv('BASE_URL')
 SALES_LIST = os.getenv('SALES_LIST')
 SALES_PAGE = os.getenv('SALES_PAGE')
 
+counter = 0
+lot_num = 0
 
 def get_proxies() -> list:
-    with open('../proxies.txt', 'r') as file:
+    with open('proxies.txt', 'r') as file:
         proxy_set = [line.strip() for line in file]
     return proxy_set
 
@@ -70,31 +72,31 @@ def pars_html(source: str = None) -> list:
     return  links
 
 def pars_json(source: dict) -> list:
-
+    global lot_num
     lots = []
 
     try:
-        data = source['data']['results']['content']
-        for block in data:
+        content = source['data']['results']['content']
+        for block in content:
             lots.append(
                 {
+                    'lot_number': block.get('ln', None),  # int
                     'make': block.get('mkn', None),  # str
                     'model': block.get('mmod', None),  # str
-                    'trim_level': block.get('mtrim', None),  # str
-                    'release_date': block.get('lcy', None),  # int
-                    'lot_number': block.get('ln', None),  # int
                     'highlight': block.get('lcd', None),  # str
-                    'vin_code': block.get('fv', None),  # str
-                    'odometer': block.get('orr', None),  # float
                     'primary_damage': block.get('dd', None),  # str
                     'secondary_damage': block.get('sdd', None),  # str
-                    'estimated_retail_value': (block.get('la', None)),  # float
-                    'body_style': block.get('bstl', None),  # str
-                    'color': block.get('clr', None),  # str
-                    'engine_type': block.get('egn', None),  # str
+                    'body': block.get('bstl', None),  # str
+                    'motor': block.get('egn', None),  # str
                     'transmission': block.get('tmtp', None),  # str
                     'drive': block.get('drv', None),  # str
                     'fuel': block.get('ft', None),  # str
+                    'release_date': block.get('lcy', None),  # int
+                    'trim_level': block.get('mtrim', None),  # str
+                    'vin_code': block.get('fv', None),  # str
+                    'odometer': block.get('orr', None),  # float
+                    'estimated_retail_value': (block.get('la', None)),  # float
+                    'color': block.get('clr', None),  # str
                     'has_keys': block.get('hk', None),  # str
                     'buy_it_now_price': block.get('bnp', None),  # float
                     'buy_it_now_flag': True if block.get('bndc') else False,
@@ -110,7 +112,7 @@ def pars_json(source: dict) -> list:
     return lots
 
 async def get_data_from_link(link: str) -> None:
-
+    global counter
     async with aiohttp.ClientSession() as session:
         pattern = r'(?<=ResultAll\/)(\d+)'
 
@@ -128,6 +130,8 @@ async def get_data_from_link(link: str) -> None:
                 parsed_data: list = pars_json(await response.json())  # get parsed data
 
                 data.source = parsed_data
+                counter += 1
+                logger.info(f"New data has been received {counter}")
 
                 sleep_time = randint(4, 7)
                 await asyncio.sleep(sleep_time)
@@ -149,6 +153,8 @@ async def start():
 
 
 if __name__ == '__main__':
+
+
     proxies = get_proxies()         # create set of proxy
     drivers = PoolDriver(proxies)   # create set of google-chrome drivers
     data = Storage()                # create storage for data
@@ -156,4 +162,6 @@ if __name__ == '__main__':
     asyncio.run(start())            # start scraping
 
     data.save_data()                # save data
+
+
 

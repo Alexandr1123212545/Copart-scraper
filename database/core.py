@@ -17,6 +17,11 @@ class StorageHandler:
         await engine.async_engine.dispose()
 
     @staticmethod
+    async def create_session() -> AsyncSession:
+        async with async_session_factory() as session:
+            return session
+
+    @staticmethod
     async def get_all_existing_lot_numbers(session: AsyncSession) -> set:
         query_select_lots_number = await session.execute(select(models.MainDataORM.lot_number))
         existing_lot_numbers = {row[0] for row in query_select_lots_number.all()}
@@ -28,18 +33,22 @@ class StorageHandler:
         return {row[1]: row[0] for row in query_select.all()}
 
     @staticmethod
-    async def get_or_create_related(session: AsyncSession, orm_clss: models, lookup_field: str, value: str, cache_dict: dict) -> int:
+    async def get_or_create_related(
+            session: AsyncSession, orm_clss: models, lookup_field: str, value: str, cache_dict: dict, linked_table: int = None) -> int:
+        if value is None:
+            return None
+
         if value in cache_dict:
             return cache_dict[value]
 
-        record = await session.execute(select(orm_clss.id).where(getattr(orm_clss, lookup_field) == value))
-        record_id = record.scalar_one_or_none()
+        result = await session.execute(select(orm_clss.id).where(getattr(orm_clss, lookup_field) == value))
+        record_id = result.scalar_one_or_none()
 
-        if record_id:
+        if record_id is not None:
             cache_dict[value] = record_id
             return record_id
 
-        new_record = orm_clss(**{lookup_field: value})
+        new_record = orm_clss(**{lookup_field: value}) if linked_table is None else orm_clss(**{lookup_field: value, "make_id": linked_table})
         session.add(new_record)
         await session.flush()
         cache_dict[value] = new_record.id
@@ -48,16 +57,15 @@ class StorageHandler:
     @classmethod
     async def load_all_related_data(cls, session: AsyncSession) -> dict:
         related_models = {
-            'makes': (models.MakeORM, 'make', 'id'),
-            'models': (models.ModelORM, 'model', 'id'),
-            'highlights': (models.HighlightORM, 'descriptions', 'id'),
-            'primary_damage': (models.DamageTypeORM, 'damage', 'id'),
-            'secondary_damage': (models.DamageTypeORM, 'damage', 'id'),
-            'body_styles': (models.BodyStyleORM, 'body', 'id'),
-            'engines': (models.EngineTypeORM, 'engine', 'id'),
-            'transmissions': (models.TransmissionTypeORM, 'transmission', 'id'),
-            'drives': (models.DriveTypeORM, 'drive', 'id'),
-            'fuels': (models.FuelTypeORM, 'fuel', 'id'),
+            'make': (models.MakeORM, 'tittle', 'id'),
+            'model': (models.ModelORM, 'tittle', 'id'),
+            'highlights': (models.HighlightORM, 'tittle', 'id'),
+            'damage': (models.DamageTypeORM, 'tittle', 'id'),
+            'body': (models.BodyStyleORM, 'tittle', 'id'),
+            'motor': (models.MotorTypeORM, 'tittle', 'id'),
+            'transmission': (models.TransmissionTypeORM, 'tittle', 'id'),
+            'drive': (models.DriveTypeORM, 'tittle', 'id'),
+            'fuel': (models.FuelTypeORM, 'tittle', 'id'),
         }
 
         result = {}
@@ -67,166 +75,91 @@ class StorageHandler:
         return result
 
     @classmethod
-    async def update_data(cls, new_data: list):
-        async with async_session_factory() as session:
-            # Get all lot number from DB
-            existing_lot_numbers: set = await cls.get_all_existing_lot_numbers(session=session)
+    async def update_database(cls, lots: list) -> None:
+        # Create session
+        session: AsyncSession = await cls.create_session()
 
-            # Get all the values of temporary keys
-            related_data = await cls.load_all_related_data(session)
+        # Get existing lots
+        existing_lots: set = await cls.get_all_existing_lot_numbers(session)
 
-            # Delete old data
-            new_lot_numbers = {lot['lot_number'] for lot in new_data}
-            old_lot_numbers = existing_lot_numbers.difference(new_lot_numbers)
-            if old_lot_numbers:
-                await session.execute(delete(models.MainDataORM).where(models.MainDataORM.lot_number.in_(old_lot_numbers)))
-                await session.commit()
+        # Get related data from DB
+        related_data: dict = await cls.load_all_related_data(session)
 
-            lots_to_update = []
-            lots_to_insert = []
-
-            for lot in new_data:
-                make_id = await cls.get_or_create_related(
-                    session, models.MakeORM, "make", lot["make"], related_data['makes'])
-                model_id = await cls.get_or_create_related(
-                    session, models.ModelORM, "model", lot["model"], related_data['models'])
-                highlight_id = await cls.get_or_create_related(
-                    session, models.HighlightORM, "descriptions", lot["descriptions"], related_data['highlights'])
-                primary_damage_id = await cls.get_or_create_related(
-                    session, models.DamageTypeORM, "damage", lot["primary_damage"], related_data['primary_damage'])
-                secondary_damage_id = await cls.get_or_create_related(
-                    session, models.DamageTypeORM, "damage", lot["secondary_damage"], related_data['secondary_damage'])
-                body_id = await cls.get_or_create_related(
-                    session, models.BodyStyleORM, "body", lot["body"], related_data['body_styles'])
-                engine_id = await cls.get_or_create_related(
-                    session, models.EngineTypeORM, "engine", lot["engine"], related_data['engines'])
-                transmission_id = await cls.get_or_create_related(
-                    session, models.TransmissionTypeORM, "transmission", lot["transmission"], related_data['transmissions'])
-                drive_id = await cls.get_or_create_related(
-                    session, models.DriveTypeORM, "drive", lot["drive"], related_data['drives'])
-                fuel_id = await cls.get_or_create_related(
-                    session, models.FuelTypeORM, "fuel", lot["fuel"], related_data['fuels'])
-
-                if lot["lot_number"] in existing_lot_numbers:
-                    lots_to_update.append({
-                        "lot_number": lot["lot_number"],
-                        "buy_it_now_price": lot["buy_it_now_price"],
-                        "buy_it_now_flag": lot["buy_it_now_flag"],
-                        "current_bid": lot["current_bid"]
-                    })
-                else:
-                    lots_to_insert.append({
-                        "make_id": make_id,
-                        "model_id": model_id,
-                        "highlight_id": highlight_id,
-                        "primary_damage_id": primary_damage_id,
-                        "secondary_damage_id": secondary_damage_id,
-                        "body_id": body_id,
-                        "engine_id": engine_id,
-                        "transmission_id": transmission_id,
-                        "drive_id": drive_id,
-                        "fuel_id": fuel_id,
-                        **lot
-                    })
-
-            # Update new data
-            if lots_to_update:
-                await session.bulk_update_mappings(models.MainDataORM, lots_to_update)
-
-            # Insert new data
-            if lots_to_insert:
-                session.add_all([models.MainDataORM(**lot) for lot in lots_to_insert])
-
+        # Delete old data
+        new_lot_numbers = {lot['lot_number'] for lot in lots}
+        old_lot_numbers = existing_lots.difference(new_lot_numbers)
+        if old_lot_numbers:
+            await session.execute(delete(models.MainDataORM).where(models.MainDataORM.lot_number.in_(old_lot_numbers)))
             await session.commit()
 
-async def test_start():
-    # await StorageHandler.create_tables()
-    await StorageHandler.update_data(data)
+        lots_to_update = []
+        lots_to_insert = []
 
+        # Preparing data
+        for lot in lots:
+            make_id = await cls.get_or_create_related(
+                    session, models.MakeORM, "tittle", lot["make"], related_data['make'])
+            model_id = await cls.get_or_create_related(
+                session, models.ModelORM, "tittle", lot["model"], related_data['model'], make_id)
+            highlight_id = await cls.get_or_create_related(
+                session, models.HighlightORM, "tittle", lot["highlight"], related_data['highlights'])
+            primary_damage_id = await cls.get_or_create_related(
+                session, models.DamageTypeORM, "tittle", lot["primary_damage"], related_data['damage'])
+            secondary_damage_id = await cls.get_or_create_related(
+                session, models.DamageTypeORM, "tittle", lot["secondary_damage"], related_data['damage'])
+            body_id = await cls.get_or_create_related(
+                session, models.BodyStyleORM, "tittle", lot["body"], related_data['body'])
+            motor_id = await cls.get_or_create_related(
+                session, models.MotorTypeORM, "tittle", lot["motor"], related_data['motor'])
+            transmission_id = await cls.get_or_create_related(
+                session, models.TransmissionTypeORM, "tittle", lot["transmission"], related_data['transmission'])
+            drive_id = await cls.get_or_create_related(
+                session, models.DriveTypeORM, "tittle", lot["drive"], related_data['drive'])
+            fuel_id = await cls.get_or_create_related(
+                session, models.FuelTypeORM, "tittle", lot["fuel"], related_data['fuel'])
 
-if __name__ == "__main__":
-    data = [
-        {
-            "make": "FORD",
-            "model": "ECONOLINE",
-            "trim_level": None,  # Используйте None вместо null
-            "release_date": 2006,
-            "lot_number": 78689884,
-            "highlight": "ENHANCED VEHICLES",
-            "vin_code": "1FDXE45S16H******",
-            "odometer": 0.0,
-            "actual": "EXEMPT",
-            "primary_damage": "FRONT END",
-            "secondary_damage": "SIDE",
-            "estimated_retail_value": 0.0,
-            "body_style": "CUTAWAY",
-            "color": "WHITE",
-            "engine_type": "6.8L 10",
-            "transmission": "AUTOMATIC",
-            "drive": "Rear-wheel drive",
-            "fuel": "GAS",
-            "has_keys": "YES",
-            "buy_it_now_price": 0.0,
-            "buy_it_now_flag": False,  # Используйте False вместо false
-            "seller_reserve_met": None,  # Используйте None вместо null
-            "current_bid": 0.0,
-            "photo": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/lpp/1024/1ee822d40509401d9b1d6638fc815050_thb.jpg",
-            "lot_link": "https://www.copart.com/lot/78689884/clean-title-2006-ford-econoline-e450-super-duty-cutaway-van-ca-martinez"
-        },
-        {
-            "make": "MERCEDES-BENZ",
-            "model": "SPRINTER",
-            "trim_level": None,
-            "release_date": 2016,
-            "lot_number": 78309064,
-            "highlight": "ENHANCED VEHICLES",
-            "vin_code": "WDZPE8DD4GP******",
-            "odometer": 0.0,
-            "actual": "NOT ACTUAL",
-            "primary_damage": "WATER/FLOOD",
-            "secondary_damage": "",
-            "estimated_retail_value": 0.0,
-            "body_style": "EXTENDED",
-            "color": "BLACK",
-            "engine_type": "2.1L 4",
-            "transmission": "AUTOMATIC",
-            "drive": "Rear-wheel drive",
-            "fuel": "DIESEL",
-            "has_keys": "YES",
-            "buy_it_now_price": 0.0,
-            "buy_it_now_flag": False,
-            "seller_reserve_met": None,
-            "current_bid": 0.0,
-            "photo": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/lpp/1024/b2cb7bd1c2d443bc888ad6389e1a5af4_thb.jpg",
-            "lot_link": "https://www.copart.com/lot/78309064/clean-title-2016-mercedes-benz-sprinter-2500-fl-tampa-south"
-        },
-        {
-            "make": "CHEVROLET",
-            "model": "EXPRESS G2500",
-            "trim_level": None,
-            "release_date": 2015,
-            "lot_number": 78163404,
-            "highlight": "RUNS AND DRIVES",
-            "vin_code": "1GCWGGCG0F1******",
-            "odometer": 199282.0,
-            "actual": "ACTUAL",
-            "primary_damage": "SIDE",
-            "secondary_damage": "",
-            "estimated_retail_value": 2795.0,
-            "body_style": "",  # Можно оставить пустым, если это допустимо
-            "color": "WHITE",
-            "engine_type": "6.0L 8",
-            "transmission": "AUTOMATIC",
-            "drive": "Rear-wheel drive",
-            "fuel": "FLEXIBLE FUEL",
-            "has_keys": "YES",
-            "buy_it_now_price": 0.0,
-            "buy_it_now_flag": False,
-            "seller_reserve_met": None,
-            "current_bid": 0.0,
-            "photo": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/lpp/1024/54cdda6d6f6b4363a9a4892535ac031d_thb.jpg",
-            "lot_link": "https://www.copart.com/lot/78163404/clean-title-2015-chevrolet-express-g2500-fl-tampa-south"
-        }
-    ]
+            # Preparing to update existing data
+            if lot["lot_number"] in existing_lots:
+                lots_to_update.append({
+                    "lot_number": lot["lot_number"],
+                    "buy_it_now_price": lot["buy_it_now_price"],
+                    "buy_it_now_flag": lot["buy_it_now_flag"],
+                    "current_bid": lot["current_bid"]
+                })
+            # Preparing to insert new data
+            else:
+                lots_to_insert.append({
+                    "make_id": make_id,
+                    "model_id": model_id,
+                    "highlight_id": highlight_id,
+                    "primary_damage_id": primary_damage_id,
+                    "secondary_damage_id": secondary_damage_id,
+                    "body_id": body_id,
+                    "motor_id": motor_id,
+                    "transmission_id": transmission_id,
+                    "drive_id": drive_id,
+                    "fuel_id": fuel_id,
+                    "release_date":  lot["release_date"],
+                    "trim_level":  lot["trim_level"],
+                    "vin_code":  lot["vin_code"],
+                    "odometer":  lot["odometer"],
+                    "estimated_retail_value":  lot["estimated_retail_value"],
+                    "color":  lot["color"],
+                    "has_keys":  lot["has_keys"],
+                    "buy_it_now_price":  lot["buy_it_now_price"],
+                    "buy_it_now_flag": lot["buy_it_now_flag"],
+                    "seller_reserve_met":  lot["seller_reserve_met"],
+                    "current_bid":  lot["current_bid"],
+                    "photo":  lot["photo"],
+                    "lot_link":  lot["lot_link"],
+                })
 
-    asyncio.run(test_start())
+        # Update new data
+        if lots_to_update:
+            await session.bulk_update_mappings(models.MainDataORM, lots_to_update)
+
+        # Insert new data
+        if lots_to_insert:
+            session.add_all([models.MainDataORM(**lot) for lot in lots_to_insert])
+
+        await session.commit()
