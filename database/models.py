@@ -17,6 +17,12 @@ class UserStatus(Enum):
     PAID = "activate"
     NOT_PAID = "not_paid"
 
+class ProxySetORM(Base):
+    __tablename__ = 'proxy'
+
+    id: Mapped[int_pk]
+    proxy: Mapped[str_50]
+
 class UserORM(Base):
     __tablename__ = "users"
 

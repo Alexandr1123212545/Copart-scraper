@@ -5,10 +5,12 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from database import models, engine
 from database.engine import async_session_factory, sync_session_factory
-from database.models import MainDataORM
 
 
 class StorageHandler:
+
+    def __init__(self):
+        self.__proxy = []
 
     @classmethod
     async def create_tables(cls):
@@ -16,6 +18,25 @@ class StorageHandler:
             await conn.run_sync(engine.Base.metadata.drop_all)
             await conn.run_sync(engine.Base.metadata.create_all)
         await engine.async_engine.dispose()
+
+    async def get_proxy(self):
+        if self.__proxy:
+            return self.__proxy
+
+        async with await self.create_session() as session:
+            query_select = await session.execute(select(models.ProxySetORM.proxy))
+            result = query_select.scalars().all()
+
+            if result:
+                self.__proxy.extend(result)
+            return self.__proxy
+
+    async def set_proxy(self, proxies: list[dict]):
+        if proxies:
+            async with await self.create_session() as session:
+                session.add_all([models.ProxySetORM(**proxy) for proxy in proxies])
+                await session.commit()
+
 
     @staticmethod
     async def create_session() -> AsyncSession:
@@ -177,3 +198,8 @@ class StorageHandler:
             session.add_all([models.MainDataORM(**lot) for lot in lots_to_insert])
 
         await session.commit()
+
+
+if __name__ == "__main__":
+    set_of_proxies = StorageHandler.proxy
+    print(set_of_proxies)

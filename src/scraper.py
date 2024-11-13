@@ -152,16 +152,11 @@ async def start():
     await asyncio.gather(*tasks)
 
 
-if __name__ == '__main__':
-
-
-    proxies = get_proxies()         # create set of proxy
-    drivers = PoolDriver(proxies)   # create set of google-chrome drivers
-    data = Storage()                # create storage for data
-
-    asyncio.run(start())            # start scraping
-
-    data.save_data()                # save data
+proxies = get_proxies()         # create set of proxy
+drivers = PoolDriver(proxies)   # create set of google-chrome drivers
+data = Storage()                # create storage for data
+asyncio.run(start())            # start scraping
+data.save_data()                # save data
 
 
 
