@@ -20,6 +20,13 @@ class Storage:
     def source(self, data: list) -> None:
         self.__data.extend(data)
 
-    def save_data(self):
+    async def save_data(self):
+
+        try:
+            with open("data.json", "w", encoding="utf-8") as file:
+                json.dump(self.__data, file, ensure_ascii=False, indent=4)
+        except Exception as e:
+            print(f"Wrong write json: {e}")
+
         from database.core import StorageHandler
-        StorageHandler.update_database(self.__data)
+        await StorageHandler.update_database(self.__data)

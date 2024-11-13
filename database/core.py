@@ -246,6 +246,3 @@ class StorageHandler:
 
         await session.commit()
 
-
-if __name__ == "__main__":
-    ...

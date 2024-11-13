@@ -122,3 +122,1221 @@ FROM proxy
 2024-11-13 16:30:10,905 - sqlalchemy.pool.impl.AsyncAdaptedQueuePool - ERROR - The garbage collector is trying to clean up non-checked-in connection <AdaptedConnection <psycopg.AsyncConnection [INTRANS] (host=localhost user=superuser database=copart) at 0x7856ba8955d0>>, which will be dropped, as it cannot be safely terminated.  Please ensure that SQLAlchemy pooled connections are returned to the pool explicitly, either by calling ``close()`` or by using appropriate context managers to manage their lifecycle.
 2024-11-13 16:32:57,366 - sqlalchemy.pool.impl.AsyncAdaptedQueuePool - ERROR - The garbage collector is trying to clean up non-checked-in connection <AdaptedConnection <psycopg.AsyncConnection [INTRANS] (host=localhost user=superuser database=copart) at 0x77539c82bd10>>, which will be dropped, as it cannot be safely terminated.  Please ensure that SQLAlchemy pooled connections are returned to the pool explicitly, either by calling ``close()`` or by using appropriate context managers to manage their lifecycle.
 2024-11-13 16:33:30,438 - sqlalchemy.pool.impl.AsyncAdaptedQueuePool - ERROR - The garbage collector is trying to clean up non-checked-in connection <AdaptedConnection <psycopg.AsyncConnection [INTRANS] (host=localhost user=superuser database=copart) at 0x7193ae99d610>>, which will be dropped, as it cannot be safely terminated.  Please ensure that SQLAlchemy pooled connections are returned to the pool explicitly, either by calling ``close()`` or by using appropriate context managers to manage their lifecycle.
+2024-11-13 16:50:37,867 - sqlalchemy.pool.impl.AsyncAdaptedQueuePool - ERROR - The garbage collector is trying to clean up non-checked-in connection <AdaptedConnection <psycopg.AsyncConnection [IDLE] (host=localhost user=superuser database=copart) at 0x70dd62013dd0>>, which will be dropped, as it cannot be safely terminated.  Please ensure that SQLAlchemy pooled connections are returned to the pool explicitly, either by calling ``close()`` or by using appropriate context managers to manage their lifecycle.
+2024-11-13 17:06:31,688 - uc - INFO - setting properties for headless
+2024-11-13 17:06:33,789 - uc - INFO - setting properties for headless
+2024-11-13 17:06:36,037 - uc - INFO - setting properties for headless
+2024-11-13 17:06:39,247 - uc - INFO - setting properties for headless
+2024-11-13 17:06:41,472 - uc - INFO - setting properties for headless
+2024-11-13 17:06:59,851 - uc - INFO - ensuring close
+2024-11-13 17:06:59,851 - uc - INFO - ensuring close
+2024-11-13 17:06:59,852 - uc - INFO - ensuring close
+2024-11-13 17:06:59,852 - uc - INFO - ensuring close
+2024-11-13 17:06:59,853 - uc - INFO - ensuring close
+2024-11-13 17:18:42,872 - uc - INFO - setting properties for headless
+2024-11-13 17:18:44,848 - uc - INFO - setting properties for headless
+2024-11-13 17:18:47,282 - uc - INFO - setting properties for headless
+2024-11-13 17:18:49,372 - uc - INFO - setting properties for headless
+2024-11-13 17:18:51,663 - uc - INFO - setting properties for headless
+2024-11-13 17:19:08,717 - uc - INFO - ensuring close
+2024-11-13 17:19:08,718 - uc - INFO - ensuring close
+2024-11-13 17:19:08,718 - uc - INFO - ensuring close
+2024-11-13 17:19:08,718 - uc - INFO - ensuring close
+2024-11-13 17:19:08,718 - uc - INFO - ensuring close
+2024-11-13 17:24:35,426 - uc - INFO - setting properties for headless
+2024-11-13 17:24:37,406 - uc - INFO - setting properties for headless
+2024-11-13 17:24:39,570 - uc - INFO - setting properties for headless
+2024-11-13 17:24:41,745 - uc - INFO - setting properties for headless
+2024-11-13 17:24:43,802 - uc - INFO - setting properties for headless
+2024-11-13 17:24:45,991 - uc - INFO - setting properties for headless
+2024-11-13 17:25:06,157 - uc - INFO - ensuring close
+2024-11-13 17:25:06,157 - uc - INFO - ensuring close
+2024-11-13 17:25:06,157 - uc - INFO - ensuring close
+2024-11-13 17:25:06,158 - uc - INFO - ensuring close
+2024-11-13 17:25:06,158 - uc - INFO - ensuring close
+2024-11-13 17:25:06,159 - uc - INFO - ensuring close
+2024-11-13 17:34:50,073 - uc - INFO - setting properties for headless
+2024-11-13 17:34:52,071 - uc - INFO - setting properties for headless
+2024-11-13 17:34:54,252 - uc - INFO - setting properties for headless
+2024-11-13 17:34:56,339 - uc - INFO - setting properties for headless
+2024-11-13 17:34:58,362 - uc - INFO - setting properties for headless
+2024-11-13 17:35:00,554 - uc - INFO - setting properties for headless
+2024-11-13 17:35:02,518 - uc - INFO - ensuring close
+2024-11-13 17:35:02,519 - uc - INFO - ensuring close
+2024-11-13 17:35:02,519 - uc - INFO - ensuring close
+2024-11-13 17:35:02,519 - uc - INFO - ensuring close
+2024-11-13 17:35:02,523 - uc - INFO - ensuring close
+2024-11-13 17:35:02,523 - uc - INFO - ensuring close
+2024-11-13 17:36:17,850 - uc - INFO - setting properties for headless
+2024-11-13 17:36:19,923 - uc - INFO - setting properties for headless
+2024-11-13 17:36:22,960 - uc - INFO - setting properties for headless
+2024-11-13 17:36:25,133 - uc - INFO - setting properties for headless
+2024-11-13 17:36:27,242 - uc - INFO - setting properties for headless
+2024-11-13 17:36:29,390 - uc - INFO - setting properties for headless
+2024-11-13 17:36:39,109 - parser - INFO - Pages left: 4
+2024-11-13 17:36:39,210 - parser - INFO - Pages left: 3
+2024-11-13 17:36:39,239 - parser - INFO - Pages left: 2
+2024-11-13 17:36:40,340 - parser - INFO - Pages left: 1
+2024-11-13 17:36:40,823 - parser - INFO - Pages left: 0
+2024-11-13 17:36:49,700 - uc - INFO - ensuring close
+2024-11-13 17:36:49,700 - uc - INFO - ensuring close
+2024-11-13 17:36:49,700 - uc - INFO - ensuring close
+2024-11-13 17:36:49,701 - uc - INFO - ensuring close
+2024-11-13 17:36:49,701 - uc - INFO - ensuring close
+2024-11-13 17:36:49,701 - uc - INFO - ensuring close
+2024-11-13 17:37:25,248 - uc - INFO - setting properties for headless
+2024-11-13 17:37:27,287 - uc - INFO - setting properties for headless
+2024-11-13 17:37:29,296 - uc - INFO - setting properties for headless
+2024-11-13 17:37:31,390 - uc - INFO - setting properties for headless
+2024-11-13 17:37:33,656 - uc - INFO - setting properties for headless
+2024-11-13 17:37:35,665 - uc - INFO - setting properties for headless
+2024-11-13 17:37:47,803 - parser - INFO - Pages left: 214
+2024-11-13 17:37:47,989 - parser - INFO - Pages left: 213
+2024-11-13 17:37:48,071 - parser - INFO - Pages left: 212
+2024-11-13 17:37:48,187 - parser - INFO - Pages left: 211
+2024-11-13 17:37:48,270 - parser - INFO - Pages left: 210
+2024-11-13 17:37:48,375 - parser - INFO - Pages left: 209
+2024-11-13 17:37:48,383 - parser - INFO - Pages left: 208
+2024-11-13 17:37:48,525 - parser - INFO - Pages left: 207
+2024-11-13 17:37:48,527 - parser - INFO - Pages left: 206
+2024-11-13 17:37:48,547 - parser - INFO - Pages left: 205
+2024-11-13 17:37:48,559 - parser - INFO - Pages left: 204
+2024-11-13 17:37:48,596 - parser - INFO - Pages left: 203
+2024-11-13 17:37:48,700 - parser - INFO - Pages left: 202
+2024-11-13 17:37:48,760 - parser - INFO - Pages left: 201
+2024-11-13 17:37:48,776 - parser - INFO - Pages left: 200
+2024-11-13 17:37:48,854 - parser - INFO - Pages left: 199
+2024-11-13 17:37:48,861 - parser - INFO - Pages left: 198
+2024-11-13 17:37:48,897 - parser - INFO - Pages left: 197
+2024-11-13 17:37:48,904 - parser - INFO - Pages left: 196
+2024-11-13 17:37:48,911 - parser - INFO - Pages left: 195
+2024-11-13 17:37:48,918 - parser - INFO - Pages left: 194
+2024-11-13 17:37:48,933 - parser - INFO - Pages left: 193
+2024-11-13 17:37:48,947 - parser - INFO - Pages left: 192
+2024-11-13 17:37:49,142 - parser - INFO - Pages left: 191
+2024-11-13 17:37:49,231 - parser - INFO - Pages left: 190
+2024-11-13 17:37:49,276 - parser - INFO - Pages left: 189
+2024-11-13 17:37:49,292 - parser - INFO - Pages left: 188
+2024-11-13 17:37:49,377 - parser - INFO - Pages left: 187
+2024-11-13 17:37:49,468 - parser - INFO - Pages left: 186
+2024-11-13 17:37:49,507 - parser - INFO - Pages left: 185
+2024-11-13 17:37:49,512 - parser - INFO - Pages left: 184
+2024-11-13 17:37:49,528 - parser - INFO - Pages left: 183
+2024-11-13 17:37:49,545 - parser - INFO - Pages left: 182
+2024-11-13 17:37:49,556 - parser - INFO - Pages left: 181
+2024-11-13 17:37:49,585 - parser - INFO - Pages left: 180
+2024-11-13 17:37:49,624 - parser - INFO - Pages left: 179
+2024-11-13 17:37:49,629 - parser - INFO - Pages left: 178
+2024-11-13 17:37:49,673 - parser - INFO - Pages left: 177
+2024-11-13 17:37:49,681 - parser - INFO - Pages left: 176
+2024-11-13 17:37:49,715 - parser - INFO - Pages left: 175
+2024-11-13 17:37:49,727 - parser - INFO - Pages left: 174
+2024-11-13 17:37:49,736 - parser - INFO - Pages left: 173
+2024-11-13 17:37:49,785 - parser - INFO - Pages left: 172
+2024-11-13 17:37:49,885 - parser - INFO - Pages left: 171
+2024-11-13 17:37:49,904 - parser - INFO - Pages left: 170
+2024-11-13 17:37:49,957 - parser - INFO - Pages left: 169
+2024-11-13 17:37:49,963 - parser - INFO - Pages left: 168
+2024-11-13 17:37:49,967 - parser - INFO - Pages left: 167
+2024-11-13 17:37:49,977 - parser - INFO - Pages left: 166
+2024-11-13 17:37:49,996 - parser - INFO - Pages left: 165
+2024-11-13 17:37:50,022 - parser - INFO - Pages left: 164
+2024-11-13 17:37:50,028 - parser - INFO - Pages left: 163
+2024-11-13 17:37:50,054 - parser - INFO - Pages left: 162
+2024-11-13 17:37:50,085 - parser - INFO - Pages left: 161
+2024-11-13 17:37:50,117 - parser - INFO - Pages left: 160
+2024-11-13 17:37:50,149 - parser - INFO - Pages left: 159
+2024-11-13 17:37:50,220 - parser - INFO - Pages left: 158
+2024-11-13 17:37:50,282 - parser - INFO - Pages left: 157
+2024-11-13 17:37:50,299 - parser - INFO - Pages left: 156
+2024-11-13 17:37:50,394 - parser - INFO - Pages left: 155
+2024-11-13 17:37:50,450 - parser - INFO - Pages left: 154
+2024-11-13 17:37:50,462 - parser - INFO - Pages left: 153
+2024-11-13 17:37:50,509 - parser - INFO - Pages left: 152
+2024-11-13 17:37:50,515 - parser - INFO - Pages left: 151
+2024-11-13 17:37:50,565 - parser - INFO - Pages left: 150
+2024-11-13 17:37:50,586 - parser - INFO - Pages left: 149
+2024-11-13 17:37:50,597 - parser - INFO - Pages left: 148
+2024-11-13 17:37:50,613 - parser - INFO - Pages left: 147
+2024-11-13 17:37:50,705 - parser - INFO - Pages left: 146
+2024-11-13 17:37:50,746 - parser - INFO - Pages left: 145
+2024-11-13 17:37:50,768 - parser - INFO - Pages left: 144
+2024-11-13 17:37:50,778 - parser - INFO - Pages left: 143
+2024-11-13 17:37:50,787 - parser - INFO - Pages left: 142
+2024-11-13 17:37:50,885 - parser - INFO - Pages left: 141
+2024-11-13 17:37:50,915 - parser - INFO - Pages left: 140
+2024-11-13 17:37:50,921 - parser - INFO - Pages left: 139
+2024-11-13 17:37:50,929 - parser - INFO - Pages left: 138
+2024-11-13 17:37:50,951 - parser - INFO - Pages left: 137
+2024-11-13 17:37:50,996 - parser - INFO - Pages left: 136
+2024-11-13 17:37:51,053 - parser - INFO - Pages left: 135
+2024-11-13 17:37:51,055 - parser - INFO - Pages left: 134
+2024-11-13 17:37:51,058 - parser - INFO - Pages left: 133
+2024-11-13 17:37:51,062 - parser - INFO - Pages left: 132
+2024-11-13 17:37:51,248 - parser - INFO - Pages left: 131
+2024-11-13 17:37:51,268 - parser - INFO - Pages left: 130
+2024-11-13 17:37:51,294 - parser - INFO - Pages left: 129
+2024-11-13 17:37:51,312 - parser - INFO - Pages left: 128
+2024-11-13 17:37:51,328 - parser - INFO - Pages left: 127
+2024-11-13 17:37:51,335 - parser - INFO - Pages left: 126
+2024-11-13 17:37:51,367 - parser - INFO - Pages left: 125
+2024-11-13 17:37:51,372 - parser - INFO - Pages left: 124
+2024-11-13 17:37:51,411 - parser - INFO - Pages left: 123
+2024-11-13 17:37:51,425 - parser - INFO - Pages left: 122
+2024-11-13 17:37:51,458 - parser - INFO - Pages left: 121
+2024-11-13 17:37:51,561 - parser - INFO - Pages left: 120
+2024-11-13 17:37:51,565 - parser - INFO - Pages left: 119
+2024-11-13 17:37:51,569 - parser - INFO - Pages left: 118
+2024-11-13 17:37:51,574 - parser - INFO - Pages left: 117
+2024-11-13 17:37:51,579 - parser - INFO - Pages left: 116
+2024-11-13 17:37:51,591 - parser - INFO - Pages left: 115
+2024-11-13 17:37:51,596 - parser - INFO - Pages left: 114
+2024-11-13 17:37:51,751 - parser - INFO - Pages left: 113
+2024-11-13 17:37:51,795 - parser - INFO - Pages left: 112
+2024-11-13 17:37:51,839 - parser - INFO - Pages left: 111
+2024-11-13 17:37:51,866 - parser - INFO - Pages left: 110
+2024-11-13 17:37:51,912 - parser - INFO - Pages left: 109
+2024-11-13 17:37:51,938 - parser - INFO - Pages left: 108
+2024-11-13 17:37:52,020 - parser - INFO - Pages left: 107
+2024-11-13 17:37:52,054 - parser - INFO - Pages left: 106
+2024-11-13 17:37:52,079 - parser - INFO - Pages left: 105
+2024-11-13 17:37:52,094 - parser - INFO - Pages left: 104
+2024-11-13 17:37:52,109 - parser - INFO - Pages left: 103
+2024-11-13 17:37:52,118 - parser - INFO - Pages left: 102
+2024-11-13 17:37:52,132 - parser - INFO - Pages left: 101
+2024-11-13 17:37:52,168 - parser - INFO - Pages left: 100
+2024-11-13 17:37:52,181 - parser - INFO - Pages left: 99
+2024-11-13 17:37:52,193 - parser - INFO - Pages left: 98
+2024-11-13 17:37:52,242 - parser - INFO - Pages left: 97
+2024-11-13 17:37:52,260 - parser - INFO - Pages left: 96
+2024-11-13 17:37:52,346 - parser - INFO - Pages left: 95
+2024-11-13 17:37:52,359 - parser - INFO - Pages left: 94
+2024-11-13 17:37:52,363 - parser - INFO - Pages left: 93
+2024-11-13 17:37:52,370 - parser - INFO - Pages left: 92
+2024-11-13 17:37:52,395 - parser - INFO - Pages left: 91
+2024-11-13 17:37:52,410 - parser - INFO - Pages left: 90
+2024-11-13 17:37:52,418 - parser - INFO - Pages left: 89
+2024-11-13 17:37:52,431 - parser - INFO - Pages left: 88
+2024-11-13 17:37:52,463 - parser - INFO - Pages left: 87
+2024-11-13 17:37:52,500 - parser - INFO - Pages left: 86
+2024-11-13 17:37:52,542 - parser - INFO - Pages left: 85
+2024-11-13 17:37:52,654 - parser - INFO - Pages left: 84
+2024-11-13 17:37:52,661 - parser - INFO - Pages left: 83
+2024-11-13 17:37:52,680 - parser - INFO - Pages left: 82
+2024-11-13 17:37:52,793 - parser - INFO - Pages left: 81
+2024-11-13 17:37:52,815 - parser - INFO - Pages left: 80
+2024-11-13 17:37:52,876 - parser - INFO - Pages left: 79
+2024-11-13 17:37:52,897 - parser - INFO - Pages left: 78
+2024-11-13 17:37:52,931 - parser - INFO - Pages left: 77
+2024-11-13 17:37:52,964 - parser - INFO - Pages left: 76
+2024-11-13 17:37:52,977 - parser - INFO - Pages left: 75
+2024-11-13 17:37:53,001 - parser - INFO - Pages left: 74
+2024-11-13 17:37:53,017 - parser - INFO - Pages left: 73
+2024-11-13 17:37:53,031 - parser - INFO - Pages left: 72
+2024-11-13 17:37:53,039 - parser - INFO - Pages left: 71
+2024-11-13 17:37:53,054 - parser - INFO - Pages left: 70
+2024-11-13 17:37:53,064 - parser - INFO - Pages left: 69
+2024-11-13 17:37:53,092 - parser - INFO - Pages left: 68
+2024-11-13 17:37:53,116 - parser - INFO - Pages left: 67
+2024-11-13 17:37:53,125 - parser - INFO - Pages left: 66
+2024-11-13 17:37:53,186 - parser - INFO - Pages left: 65
+2024-11-13 17:37:53,224 - parser - INFO - Pages left: 64
+2024-11-13 17:37:53,239 - parser - INFO - Pages left: 63
+2024-11-13 17:37:53,255 - parser - INFO - Pages left: 62
+2024-11-13 17:37:53,260 - parser - INFO - Pages left: 61
+2024-11-13 17:37:53,268 - parser - INFO - Pages left: 60
+2024-11-13 17:37:53,269 - parser - INFO - Pages left: 59
+2024-11-13 17:37:53,272 - parser - INFO - Pages left: 58
+2024-11-13 17:37:53,278 - parser - INFO - Pages left: 57
+2024-11-13 17:37:53,283 - parser - INFO - Pages left: 56
+2024-11-13 17:37:53,296 - parser - INFO - Pages left: 55
+2024-11-13 17:37:53,320 - parser - INFO - Pages left: 54
+2024-11-13 17:37:53,344 - parser - INFO - Pages left: 53
+2024-11-13 17:37:53,365 - parser - INFO - Pages left: 52
+2024-11-13 17:37:53,396 - parser - INFO - Pages left: 51
+2024-11-13 17:37:53,435 - parser - INFO - Pages left: 50
+2024-11-13 17:37:53,442 - parser - INFO - Pages left: 49
+2024-11-13 17:37:53,458 - parser - INFO - Pages left: 48
+2024-11-13 17:37:53,481 - parser - INFO - Pages left: 47
+2024-11-13 17:37:53,508 - parser - INFO - Pages left: 46
+2024-11-13 17:37:53,516 - parser - INFO - Pages left: 45
+2024-11-13 17:37:53,529 - parser - INFO - Pages left: 44
+2024-11-13 17:37:53,537 - parser - INFO - Pages left: 43
+2024-11-13 17:37:53,544 - parser - INFO - Pages left: 42
+2024-11-13 17:37:53,550 - parser - INFO - Pages left: 41
+2024-11-13 17:37:53,676 - parser - INFO - Pages left: 40
+2024-11-13 17:37:53,719 - parser - INFO - Pages left: 39
+2024-11-13 17:37:53,787 - parser - INFO - Pages left: 38
+2024-11-13 17:37:53,820 - parser - INFO - Pages left: 37
+2024-11-13 17:37:53,856 - parser - INFO - Pages left: 36
+2024-11-13 17:37:53,858 - parser - INFO - Pages left: 35
+2024-11-13 17:37:53,859 - parser - INFO - Pages left: 34
+2024-11-13 17:37:53,887 - parser - INFO - Pages left: 33
+2024-11-13 17:37:53,893 - parser - INFO - Pages left: 32
+2024-11-13 17:37:53,907 - parser - INFO - Pages left: 31
+2024-11-13 17:37:53,916 - parser - INFO - Pages left: 30
+2024-11-13 17:37:53,942 - parser - INFO - Pages left: 29
+2024-11-13 17:37:53,954 - parser - INFO - Pages left: 28
+2024-11-13 17:37:53,963 - parser - INFO - Pages left: 27
+2024-11-13 17:37:54,010 - parser - INFO - Pages left: 26
+2024-11-13 17:37:54,024 - parser - INFO - Pages left: 25
+2024-11-13 17:37:54,027 - parser - INFO - Pages left: 24
+2024-11-13 17:37:54,091 - parser - INFO - Pages left: 23
+2024-11-13 17:37:54,134 - parser - INFO - Pages left: 22
+2024-11-13 17:37:54,163 - parser - INFO - Pages left: 21
+2024-11-13 17:37:54,196 - parser - INFO - Pages left: 20
+2024-11-13 17:37:54,213 - parser - INFO - Pages left: 19
+2024-11-13 17:37:54,322 - parser - INFO - Pages left: 18
+2024-11-13 17:37:54,336 - parser - INFO - Pages left: 17
+2024-11-13 17:37:54,369 - parser - INFO - Pages left: 16
+2024-11-13 17:37:54,400 - parser - INFO - Pages left: 15
+2024-11-13 17:37:54,479 - parser - INFO - Pages left: 14
+2024-11-13 17:37:54,528 - parser - INFO - Pages left: 13
+2024-11-13 17:37:54,573 - parser - INFO - Pages left: 12
+2024-11-13 17:37:54,592 - parser - INFO - Pages left: 11
+2024-11-13 17:37:54,809 - parser - INFO - Pages left: 10
+2024-11-13 17:37:54,877 - parser - INFO - Pages left: 9
+2024-11-13 17:37:55,096 - parser - INFO - Pages left: 8
+2024-11-13 17:37:55,139 - parser - INFO - Pages left: 7
+2024-11-13 17:37:55,170 - parser - INFO - Pages left: 6
+2024-11-13 17:37:55,413 - parser - INFO - Pages left: 5
+2024-11-13 17:37:55,452 - parser - INFO - Pages left: 4
+2024-11-13 17:37:55,464 - parser - INFO - Pages left: 3
+2024-11-13 17:37:56,243 - parser - INFO - Pages left: 2
+2024-11-13 17:37:56,328 - parser - INFO - Pages left: 1
+2024-11-13 17:37:56,890 - parser - INFO - Pages left: 0
+2024-11-13 17:38:57,015 - uc - INFO - ensuring close
+2024-11-13 17:38:57,016 - uc - INFO - ensuring close
+2024-11-13 17:38:57,016 - uc - INFO - ensuring close
+2024-11-13 17:38:57,016 - uc - INFO - ensuring close
+2024-11-13 17:38:57,017 - uc - INFO - ensuring close
+2024-11-13 17:38:57,017 - uc - INFO - ensuring close
+2024-11-13 17:43:38,638 - uc - INFO - setting properties for headless
+2024-11-13 17:43:40,645 - uc - INFO - setting properties for headless
+2024-11-13 17:43:42,783 - uc - INFO - setting properties for headless
+2024-11-13 17:43:44,838 - uc - INFO - setting properties for headless
+2024-11-13 17:43:46,937 - uc - INFO - setting properties for headless
+2024-11-13 17:43:52,212 - uc - INFO - setting properties for headless
+2024-11-13 17:43:54,537 - uc - INFO - ensuring close
+2024-11-13 17:43:54,538 - uc - INFO - ensuring close
+2024-11-13 17:43:54,538 - uc - INFO - ensuring close
+2024-11-13 17:43:54,538 - uc - INFO - ensuring close
+2024-11-13 17:43:54,539 - uc - INFO - ensuring close
+2024-11-13 17:43:54,539 - uc - INFO - ensuring close
+2024-11-13 17:54:57,968 - uc - INFO - setting properties for headless
+2024-11-13 17:55:00,068 - uc - INFO - setting properties for headless
+2024-11-13 17:55:02,180 - uc - INFO - setting properties for headless
+2024-11-13 17:55:04,290 - uc - INFO - setting properties for headless
+2024-11-13 17:55:06,647 - uc - INFO - setting properties for headless
+2024-11-13 17:55:09,833 - uc - INFO - setting properties for headless
+2024-11-13 17:55:13,589 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x71fd647e5950>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/1ad9a1d2f1b637cfbd5350c43786e57e/execute/sync
+2024-11-13 17:55:13,590 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x71fd647d9590>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/1ad9a1d2f1b637cfbd5350c43786e57e/execute/sync
+2024-11-13 17:55:13,591 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x71fd647d92d0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/1ad9a1d2f1b637cfbd5350c43786e57e/execute/sync
+2024-11-13 17:55:17,598 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x71fd647da1d0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/1ad9a1d2f1b637cfbd5350c43786e57e/execute/sync
+2024-11-13 17:55:17,599 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x71fd647daf10>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/1ad9a1d2f1b637cfbd5350c43786e57e/execute/sync
+2024-11-13 17:55:17,601 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x71fd647c9b50>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/1ad9a1d2f1b637cfbd5350c43786e57e/execute/sync
+2024-11-13 17:55:25,613 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x71fd651b61d0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/1ad9a1d2f1b637cfbd5350c43786e57e/execute/sync
+2024-11-13 17:55:25,615 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x71fd647b4150>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/1ad9a1d2f1b637cfbd5350c43786e57e/execute/sync
+2024-11-13 17:55:25,616 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x71fd651e1c50>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/1ad9a1d2f1b637cfbd5350c43786e57e/execute/sync
+2024-11-13 17:55:25,647 - uc - INFO - ensuring close
+2024-11-13 17:55:25,647 - uc - INFO - ensuring close
+2024-11-13 17:55:25,647 - uc - INFO - ensuring close
+2024-11-13 17:55:25,648 - uc - INFO - ensuring close
+2024-11-13 17:55:25,648 - uc - INFO - ensuring close
+2024-11-13 17:55:25,648 - uc - INFO - ensuring close
+2024-11-13 17:59:25,419 - parser - INFO - Pages left: 9
+2024-11-13 17:59:25,421 - parser - INFO - Pages left: 9
+2024-11-13 17:59:25,530 - parser - INFO - Pages left: 7
+2024-11-13 17:59:25,531 - parser - INFO - Pages left: 7
+2024-11-13 17:59:25,531 - parser - INFO - Pages left: 7
+2024-11-13 17:59:25,532 - parser - INFO - Pages left: 7
+2024-11-13 17:59:25,539 - parser - INFO - Pages left: 7
+2024-11-13 17:59:25,853 - parser - INFO - Pages left: 4
+2024-11-13 17:59:25,853 - parser - INFO - Pages left: 4
+2024-11-13 17:59:26,123 - parser - INFO - Pages left: 2
+2024-11-13 17:59:26,124 - parser - INFO - Pages left: 2
+2024-11-13 17:59:26,124 - parser - INFO - Pages left: 2
+2024-11-13 17:59:26,126 - parser - INFO - Pages left: 2
+2024-11-13 17:59:26,126 - parser - INFO - Pages left: 2
+2024-11-13 17:59:26,126 - parser - INFO - Pages left: 2
+2024-11-13 17:59:26,127 - parser - INFO - Pages left: 2
+2024-11-13 17:59:26,127 - parser - INFO - Pages left: 2
+2024-11-13 17:59:26,136 - parser - INFO - Pages left: 2
+2024-11-13 17:59:26,171 - parser - INFO - Pages left: 2
+2024-11-13 17:59:26,277 - parser - INFO - Pages left: 2
+2024-11-13 17:59:26,407 - parser - INFO - Pages left: 2
+2024-11-13 17:59:26,501 - parser - INFO - Pages left: 2
+2024-11-13 17:59:26,574 - parser - INFO - Pages left: 2
+2024-11-13 17:59:26,628 - parser - INFO - Pages left: 2
+2024-11-13 17:59:26,637 - parser - INFO - Pages left: 2
+2024-11-13 17:59:26,645 - parser - INFO - Pages left: 2
+2024-11-13 17:59:26,686 - parser - INFO - Pages left: 2
+2024-11-13 17:59:26,696 - parser - INFO - Pages left: 2
+2024-11-13 17:59:26,734 - parser - INFO - Pages left: 2
+2024-11-13 17:59:26,780 - parser - INFO - Pages left: 2
+2024-11-13 17:59:26,786 - parser - INFO - Pages left: 2
+2024-11-13 17:59:26,810 - parser - INFO - Pages left: 2
+2024-11-13 17:59:26,814 - parser - INFO - Pages left: 2
+2024-11-13 17:59:26,829 - parser - INFO - Pages left: 2
+2024-11-13 17:59:26,868 - parser - INFO - Pages left: 2
+2024-11-13 17:59:26,876 - parser - INFO - Pages left: 2
+2024-11-13 17:59:26,884 - parser - INFO - Pages left: 2
+2024-11-13 17:59:26,944 - parser - INFO - Pages left: 2
+2024-11-13 17:59:26,950 - parser - INFO - Pages left: 2
+2024-11-13 17:59:27,009 - parser - INFO - Pages left: 2
+2024-11-13 17:59:27,044 - parser - INFO - Pages left: 2
+2024-11-13 17:59:27,067 - parser - INFO - Pages left: 2
+2024-11-13 17:59:27,098 - parser - INFO - Pages left: 2
+2024-11-13 17:59:27,139 - parser - INFO - Pages left: 2
+2024-11-13 17:59:27,161 - parser - INFO - Pages left: 2
+2024-11-13 17:59:27,310 - parser - INFO - Pages left: 1
+2024-11-13 17:59:27,319 - parser - INFO - Pages left: 1
+2024-11-13 17:59:27,327 - parser - INFO - Pages left: 1
+2024-11-13 17:59:27,481 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,481 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,497 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,541 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,579 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,586 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,602 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,618 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,633 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,651 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,656 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,667 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,669 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,678 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,683 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,698 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,719 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,727 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,732 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,739 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,743 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,753 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,755 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,793 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,797 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,800 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,804 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,834 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,846 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,907 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,928 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,962 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,970 - parser - INFO - Pages left: 0
+2024-11-13 17:59:27,971 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,016 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,067 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,146 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,162 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,173 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,205 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,217 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,248 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,268 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,308 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,343 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,374 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,410 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,452 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,467 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,504 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,524 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,539 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,571 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,578 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,583 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,613 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,630 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,636 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,661 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,661 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,679 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,686 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,689 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,695 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,715 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,762 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,778 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,832 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,856 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,858 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,914 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,956 - parser - INFO - Pages left: 0
+2024-11-13 17:59:28,989 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,066 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,109 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,124 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,162 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,168 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,172 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,247 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,251 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,259 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,300 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,328 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,353 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,353 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,356 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,386 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,406 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,447 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,476 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,484 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,518 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,529 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,558 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,581 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,621 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,623 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,625 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,642 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,647 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,651 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,663 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,665 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,678 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,692 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,709 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,717 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,724 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,745 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,758 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,781 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,844 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,850 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,873 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,934 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,952 - parser - INFO - Pages left: 0
+2024-11-13 17:59:29,955 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,005 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,006 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,026 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,057 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,069 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,085 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,116 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,124 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,125 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,152 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,241 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,289 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,359 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,408 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,411 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,421 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,438 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,510 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,514 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,531 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,573 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,645 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,651 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,681 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,720 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,733 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,775 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,777 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,817 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,823 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,828 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,854 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,949 - parser - INFO - Pages left: 0
+2024-11-13 17:59:30,987 - parser - INFO - Pages left: 0
+2024-11-13 17:59:31,022 - parser - INFO - Pages left: 0
+2024-11-13 17:59:31,056 - parser - INFO - Pages left: 0
+2024-11-13 17:59:31,057 - parser - INFO - Pages left: 0
+2024-11-13 17:59:31,081 - parser - INFO - Pages left: 0
+2024-11-13 17:59:31,089 - parser - INFO - Pages left: 0
+2024-11-13 17:59:31,214 - parser - INFO - Pages left: 0
+2024-11-13 17:59:31,386 - parser - INFO - Pages left: 0
+2024-11-13 17:59:31,481 - parser - INFO - Pages left: 0
+2024-11-13 17:59:31,495 - parser - INFO - Pages left: 0
+2024-11-13 17:59:31,623 - parser - INFO - Pages left: 0
+2024-11-13 17:59:31,811 - parser - INFO - Pages left: 0
+2024-11-13 17:59:32,081 - parser - INFO - Pages left: 0
+2024-11-13 17:59:32,274 - parser - INFO - Pages left: 0
+2024-11-13 17:59:32,367 - parser - INFO - Pages left: 0
+2024-11-13 17:59:33,225 - parser - INFO - Pages left: 0
+2024-11-13 17:59:44,800 - uc - INFO - ensuring close
+2024-11-13 17:59:44,800 - uc - INFO - ensuring close
+2024-11-13 17:59:44,801 - uc - INFO - ensuring close
+2024-11-13 17:59:44,801 - uc - INFO - ensuring close
+2024-11-13 17:59:44,801 - uc - INFO - ensuring close
+2024-11-13 17:59:44,802 - uc - INFO - ensuring close
+2024-11-13 18:08:08,811 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:08,852 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:09,040 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:09,058 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:09,090 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:09,114 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:09,117 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:09,136 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:09,137 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:09,150 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:09,211 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:09,216 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:09,239 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:09,340 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:09,388 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:09,430 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:09,438 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:09,442 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:09,470 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:09,479 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:09,489 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:09,491 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:09,494 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:09,537 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:09,546 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:09,562 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:09,570 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:09,590 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:09,599 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:09,605 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:09,653 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:09,668 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:09,675 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:09,705 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:09,725 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:09,739 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:09,759 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:09,796 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:09,826 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:09,835 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:09,852 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:09,873 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:09,880 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:09,902 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:09,918 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:09,977 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:10,001 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:10,024 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:10,046 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:10,082 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:10,090 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:10,128 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:10,131 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:10,149 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:10,159 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:10,166 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:10,190 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:10,200 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:10,203 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:10,213 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:10,220 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:10,230 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:10,239 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:10,241 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:10,244 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:10,256 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:10,260 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:10,374 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:10,402 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:10,419 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:10,427 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:10,441 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:10,462 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:10,504 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:10,514 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:10,580 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:10,592 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:10,594 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:10,616 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:10,634 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:10,653 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:10,661 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:10,672 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:10,698 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:10,796 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:10,814 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:10,853 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:10,858 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:10,936 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:10,943 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:11,017 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:11,030 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:11,044 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:11,070 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:11,148 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:11,173 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:11,302 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:11,328 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:11,345 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:11,389 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:11,403 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:11,440 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:11,444 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:11,467 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:11,486 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:11,508 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:11,545 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:11,566 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:11,596 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:11,628 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:11,666 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:11,682 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:11,705 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:11,716 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:11,742 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:11,762 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:11,847 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:11,875 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:11,898 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:11,922 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:11,967 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:12,049 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:12,093 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:12,178 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:12,220 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:12,258 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:12,298 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:12,312 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:12,335 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:12,345 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:12,369 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:12,374 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:12,464 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:12,525 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:12,548 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:12,574 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:12,647 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:12,696 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:12,744 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:12,796 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:12,800 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:12,825 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:12,845 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:12,872 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:12,887 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:12,950 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:12,997 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:13,056 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:13,095 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:13,110 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:13,118 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:13,156 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:13,207 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:13,242 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:13,376 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:13,442 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:13,503 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:13,578 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:13,639 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:13,681 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:13,700 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:13,737 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:13,747 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:13,770 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:13,792 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:13,825 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:14,121 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:14,198 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:14,232 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:14,326 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:14,365 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:14,589 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:14,649 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:14,690 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:14,732 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:14,770 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:14,849 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:14,928 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:14,973 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:15,074 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:15,129 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:15,232 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:15,290 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:15,311 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:15,333 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:15,378 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:15,524 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:15,581 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:15,623 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:15,694 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:15,763 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:15,843 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:15,876 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:15,932 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:15,983 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:16,026 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:16,082 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:16,129 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:16,186 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:16,233 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:16,278 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:16,332 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:16,388 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:16,424 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:16,468 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:16,502 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:16,573 - parser - INFO - Driver sleep: 5
+2024-11-13 18:08:16,624 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:16,666 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:16,702 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:16,738 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:16,779 - parser - INFO - Driver sleep: 6
+2024-11-13 18:08:16,845 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:16,883 - parser - INFO - Driver sleep: 4
+2024-11-13 18:08:16,931 - parser - INFO - Driver sleep: 7
+2024-11-13 18:08:27,816 - uc - INFO - ensuring close
+2024-11-13 18:08:27,816 - uc - INFO - ensuring close
+2024-11-13 18:08:27,817 - uc - INFO - ensuring close
+2024-11-13 18:08:27,817 - uc - INFO - ensuring close
+2024-11-13 18:08:27,817 - uc - INFO - ensuring close
+2024-11-13 18:08:27,818 - uc - INFO - ensuring close
+2024-11-13 18:09:50,742 - uc - INFO - setting properties for headless
+2024-11-13 18:09:52,718 - uc - INFO - setting properties for headless
+2024-11-13 18:09:54,751 - uc - INFO - setting properties for headless
+2024-11-13 18:09:56,815 - uc - INFO - setting properties for headless
+2024-11-13 18:09:58,814 - uc - INFO - setting properties for headless
+2024-11-13 18:10:00,968 - uc - INFO - setting properties for headless
+2024-11-13 18:10:16,152 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:16,153 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:16,157 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:16,158 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:16,181 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:16,412 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:16,507 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:16,930 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:16,947 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:17,026 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:17,034 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:17,055 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:17,094 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:17,098 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:17,158 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:17,174 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:17,220 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:17,221 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:17,265 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:17,275 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:17,282 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:17,329 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:17,334 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:17,415 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:17,490 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:17,491 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:17,577 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:17,700 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:17,712 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:17,736 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:17,758 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:17,779 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:17,823 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:17,906 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:17,909 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:17,923 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:17,965 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:17,978 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:17,997 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:18,019 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:18,049 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:18,114 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:18,121 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:18,171 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:18,206 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:18,208 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:18,227 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:18,228 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:18,238 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:18,263 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:18,279 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:18,324 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:18,340 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:18,342 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:18,366 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:18,370 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:18,381 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:18,382 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:18,386 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:18,438 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:18,451 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:18,530 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:18,553 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:18,568 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:18,705 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:18,722 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:18,730 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:18,737 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:18,767 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:18,769 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:18,774 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:18,776 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:18,777 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:18,781 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:18,848 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:18,878 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:18,916 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:18,943 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:18,956 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:18,974 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:18,993 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:19,000 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:19,026 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:19,027 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:19,058 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:19,092 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:19,109 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:19,126 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:19,199 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:19,204 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:19,209 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:19,221 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:19,261 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:19,265 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:19,280 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:19,297 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:19,315 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:19,374 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:19,395 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:19,396 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:19,401 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:19,426 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:19,429 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:19,432 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:19,446 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:19,457 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:19,523 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:19,570 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:19,585 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:19,590 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:19,619 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:19,654 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:19,680 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:19,698 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:19,703 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:19,724 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:19,746 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:19,751 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:19,765 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:19,794 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:19,852 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:19,853 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:19,882 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:19,897 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:19,906 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:19,966 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:19,980 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:19,988 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:19,999 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:20,005 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:20,048 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:20,083 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:20,088 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:20,135 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:20,165 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:20,174 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:20,213 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:20,253 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:20,253 - parser - INFO - Driver sleep: 4
+2024-11-13 18:10:20,263 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:20,291 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:20,311 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:20,347 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:20,350 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:20,353 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:20,442 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:20,525 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:20,533 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:20,590 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:20,592 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:20,607 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:20,627 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:20,685 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:20,692 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:20,699 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:20,710 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:20,715 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:20,719 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:20,726 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:20,729 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:20,741 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:20,757 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:20,781 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:20,816 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:20,830 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:20,869 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:20,919 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:20,986 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:21,025 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:21,032 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:21,080 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:21,096 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:21,104 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:21,176 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:21,179 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:21,189 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:21,193 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:21,255 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:21,271 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:21,315 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:21,339 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:21,351 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:21,372 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:21,413 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:21,426 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:21,438 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:21,540 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:21,562 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:21,574 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:21,653 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:21,688 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:21,702 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:21,739 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:21,778 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:21,825 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:21,846 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:21,882 - parser - INFO - Driver sleep: 6
+2024-11-13 18:10:22,169 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:22,174 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:22,216 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:22,224 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:22,248 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:22,295 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:22,327 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:22,357 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:22,386 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:22,416 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:22,535 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:22,576 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:22,746 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:22,781 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:22,860 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:22,906 - parser - INFO - Driver sleep: 5
+2024-11-13 18:10:23,150 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:24,953 - parser - INFO - Driver sleep: 7
+2024-11-13 18:10:55,097 - uc - INFO - ensuring close
+2024-11-13 18:10:55,097 - uc - INFO - ensuring close
+2024-11-13 18:10:55,098 - uc - INFO - ensuring close
+2024-11-13 18:10:55,099 - uc - INFO - ensuring close
+2024-11-13 18:10:55,099 - uc - INFO - ensuring close
+2024-11-13 18:10:55,099 - uc - INFO - ensuring close
+2024-11-13 18:28:57,667 - uc - INFO - setting properties for headless
+2024-11-13 18:28:59,665 - uc - INFO - setting properties for headless
+2024-11-13 18:29:01,906 - uc - INFO - setting properties for headless
+2024-11-13 18:29:04,461 - uc - INFO - setting properties for headless
+2024-11-13 18:29:06,491 - uc - INFO - setting properties for headless
+2024-11-13 18:29:08,573 - uc - INFO - setting properties for headless
+2024-11-13 18:29:24,710 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:26,310 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:27,330 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:27,331 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:27,331 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:27,332 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:27,942 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:27,942 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:27,943 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:27,943 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:27,944 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:27,944 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:27,945 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:27,945 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:27,946 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:27,946 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:27,947 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:27,947 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:27,948 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:27,948 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:27,949 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:27,949 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:27,949 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:27,950 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:27,950 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:27,951 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:28,494 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:28,494 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:28,495 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:28,495 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:28,495 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:28,496 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:28,497 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:28,497 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:28,497 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:28,498 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:28,498 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:28,498 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:28,499 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:28,499 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:28,499 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:28,499 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:28,499 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:28,500 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:28,500 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:28,500 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:28,501 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:28,503 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:28,504 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:28,504 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:28,504 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:28,505 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:28,506 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:28,507 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:28,508 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:28,508 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:28,509 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:28,509 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:28,509 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:28,510 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:28,510 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:28,510 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:28,514 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:28,515 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:28,515 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:28,516 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:28,517 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:28,518 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:28,518 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:28,519 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:28,520 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:28,520 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:28,520 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:28,521 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:28,521 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:28,521 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:28,522 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:28,522 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:28,533 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:28,552 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:28,568 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:28,586 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:28,592 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:28,670 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:28,672 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:28,744 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:28,751 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:28,769 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:28,781 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:28,783 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:28,785 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:28,790 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:28,797 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:28,830 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:28,872 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:28,887 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:28,896 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:28,940 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:28,954 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:29,039 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:29,075 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:29,094 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:29,101 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:29,117 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:29,195 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:29,252 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:29,284 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:29,326 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:29,432 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:29,433 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:29,440 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:29,444 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:29,513 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:29,532 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:29,578 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:29,598 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:29,609 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:29,655 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:29,678 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:29,822 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:29,831 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:29,865 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:29,865 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:29,887 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:29,888 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:29,903 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:30,007 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:30,033 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:30,107 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:30,115 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:30,135 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:30,180 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:30,215 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:30,231 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:30,306 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:30,311 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:30,341 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:30,492 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:30,518 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:30,533 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:30,592 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:30,603 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:30,697 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:30,710 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:30,723 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:30,740 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:30,758 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:30,784 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:30,808 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:30,812 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:30,857 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:30,909 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:30,926 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:30,935 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:30,983 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:30,984 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:31,002 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:31,060 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:31,080 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:31,119 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:31,132 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:31,524 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:31,537 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:31,549 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:31,639 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:31,747 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:31,749 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:31,755 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:31,809 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:31,860 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:31,930 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:32,039 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:32,050 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:32,067 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:32,146 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:32,176 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:32,227 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:32,244 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:32,268 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:32,280 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:32,328 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:32,329 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:32,425 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:32,476 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:32,480 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:32,487 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:32,496 - parser - INFO - Driver sleep: 4
+2024-11-13 18:29:32,600 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:32,808 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:32,834 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:32,914 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:32,936 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:32,942 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:32,969 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:33,111 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:33,131 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:33,158 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:33,213 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:33,433 - parser - INFO - Driver sleep: 5
+2024-11-13 18:29:33,690 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:33,700 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:33,786 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:34,060 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:34,113 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:34,165 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:34,190 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:34,194 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:34,244 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:34,375 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:34,480 - parser - INFO - Driver sleep: 6
+2024-11-13 18:29:34,662 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:34,842 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:34,901 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:34,936 - parser - INFO - Driver sleep: 7
+2024-11-13 18:29:35,027 - parser - INFO - Driver sleep: 7
+2024-11-13 18:30:27,062 - uc - INFO - ensuring close
+2024-11-13 18:30:27,062 - uc - INFO - ensuring close
+2024-11-13 18:30:27,063 - uc - INFO - ensuring close
+2024-11-13 18:30:27,063 - uc - INFO - ensuring close
+2024-11-13 18:30:27,067 - uc - INFO - ensuring close
+2024-11-13 18:30:27,071 - uc - INFO - ensuring close

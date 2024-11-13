@@ -25,6 +25,18 @@ class Parser:
     drivers = None
     data = None
 
+    @staticmethod
+    async def __retry_with_backoff(func, max_attempts = 4, delay = 1):
+        attempt = 0
+        while attempt < max_attempts:
+            try:
+                return await func()
+            except Exception as e:
+                attempt += 1
+                if attempt == max_attempts:
+                    raise
+                await asyncio.sleep(delay * 2 ** attempt)
+
     @classmethod
     async def __get_list_of_links(cls) -> list:
         source = None
@@ -139,18 +151,18 @@ class Parser:
     @classmethod
     async def start(cls):
         proxies = StorageHandler.get_proxy()    # create set of proxy
+        shuffle(proxies)
+
         cls.drivers = PoolDriver(proxies)       # create set of google-chrome drivers
         cls.data = Storage()                    # create storage for data
 
-        list_of_links = await cls.__get_list_of_links()
+        list_of_links = await cls.__retry_with_backoff(cls.__get_list_of_links, max_attempts=4)
 
         shuffle(list_of_links)
-
-        list_of_links = list_of_links[:5]
 
         tasks = [cls.__get_data_from_link(link) for link in list_of_links]
 
         await asyncio.gather(*tasks)
 
-        cls.data.save_data()                    # save data
+        await cls.data.save_data()
 
