@@ -7,13 +7,15 @@ from sqlalchemy.orm import DeclarativeBase, sessionmaker
 from config import settings
 
 sync_engine = create_engine(
-url = settings.db_url_psycopg,
-    echo=True,
+    url = settings.db_url_psycopg,
+    # echo=True,
+    echo=False,
 )
 
 async_engine = create_async_engine(
     url = settings.db_url_asyncpg,
-    echo=True,
+    # echo=True,
+    echo=False,
 )
 
 sync_session_factory = sessionmaker(sync_engine)

@@ -2,24 +2,21 @@ import asyncio
 import json
 
 from database.core import  StorageHandler
+from src.scraper import Parser
 
 
 async def test_start():
-    handler = StorageHandler()
-    set_of_proxies = await handler.get_proxy()
-    print(set_of_proxies)
+    # result = await Parser.start()
 
-    proxies = [
-        {"proxy": "socks4://46.249.38.80:1088"},
-        {"proxy": "socks4://65.109.198.19:1088"},
-        {"proxy": "socks4://185.123.102.136:1088"},
-        {"proxy": "socks4://65.109.179.198:1088"},
-        {"proxy": "socks4://80.77.23.91:1088"}
-    ]
+    # with open('saved_data_test.json', 'r') as file:
+    #     data = json.load(file)
 
-    await handler.set_proxy(proxies)
-    set_of_proxies = await handler.get_proxy()
-    print(set_of_proxies)
+    # await StorageHandler.update_database(data)
+
+    result = await StorageHandler.get_records_info_()
+    print(result)
+
+
 
 if __name__ == "__main__":
     asyncio.run(test_start())

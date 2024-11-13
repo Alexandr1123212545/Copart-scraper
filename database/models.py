@@ -144,6 +144,14 @@ class HighlightORM(Base):
     id: Mapped[int_pk]
     tittle: Mapped[str]
 
+class LogORM(Base):
+    __tablename__ = 'logs'
+
+    id: Mapped[int_pk]
+    time: Mapped[datetime.datetime] = mapped_column(server_default=text("TIMEZONE('utc', now())"))
+    deleted_entries: Mapped[int] = mapped_column(nullable=True)
+    added_entries: Mapped[int] = mapped_column(nullable=True)
+    updated_entries: Mapped[int] = mapped_column(nullable=True)
 
 if __name__ == "__main__":
     ...

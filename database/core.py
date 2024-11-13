@@ -1,16 +1,19 @@
 import asyncio
 
-from sqlalchemy import update, delete, select
+from selenium.webdriver.common.devtools.v85.dom import query_selector
+from sqlalchemy import delete, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from database import models, engine
 from database.engine import async_session_factory, sync_session_factory
-
+from logger import logger
 
 class StorageHandler:
 
-    def __init__(self):
-        self.__proxy = []
+    __proxy = []
+    __deleted_entries: int = None             # deleting old entries
+    __added_entries: int = None               # existing records updated
+    __updated_entries: int = None             # new entries added
 
     @classmethod
     async def create_tables(cls):
@@ -19,24 +22,65 @@ class StorageHandler:
             await conn.run_sync(engine.Base.metadata.create_all)
         await engine.async_engine.dispose()
 
-    async def get_proxy(self):
-        if self.__proxy:
-            return self.__proxy
+    @classmethod
+    async def get_records_info_(cls, all_logs = False):
+        try:
+            session: AsyncSession = await cls.create_session()
+            if all_logs:
+                query_select = await session.execute(
+                    select(models.LogORM)
+                )
+                result = query_select.scalars().all()
+            else:
+                query_select = await session.execute(
+                    select(models.LogORM)
+                    .order_by(models.LogORM.id.desc())
+                    .limit(1)
+                )
 
-        async with await self.create_session() as session:
-            query_select = await session.execute(select(models.ProxySetORM.proxy))
+                result = [query_select.scalars().first()]
+
+            await session.close()
+            if result:
+                return [
+                    {'time': log.time.strftime('%d-%m-%Y %H:%M:%S'),
+                     'deleted_entries': log.deleted_entries,
+                     'added_entries': log.added_entries,
+                     'updated_entries': log.updated_entries} for log in result
+                ]
+        except Exception as e:
+            logger.error(f"Error: {e}")
+
+    @classmethod
+    async def set_records_info(cls, session: AsyncSession):
+        session.add(
+            models.LogORM(
+                deleted_entries = cls.__deleted_entries,
+                added_entries = cls.__added_entries,
+                updated_entries = cls.__updated_entries
+            )
+        )
+        await session.commit()
+
+    @classmethod
+    def get_proxy(cls):
+        if cls.__proxy:
+            return cls.__proxy
+
+        with sync_session_factory() as session:
+            query_select = session.execute(select(models.ProxySetORM.proxy))
             result = query_select.scalars().all()
 
             if result:
-                self.__proxy.extend(result)
-            return self.__proxy
+                cls.__proxy.extend(result)
+            return cls.__proxy
 
-    async def set_proxy(self, proxies: list[dict]):
+    @classmethod
+    def set_proxy(cls, proxies: list[dict]) -> None:
         if proxies:
-            async with await self.create_session() as session:
+            with sync_session_factory() as session:
                 session.add_all([models.ProxySetORM(**proxy) for proxy in proxies])
-                await session.commit()
-
+                session.commit()
 
     @staticmethod
     async def create_session() -> AsyncSession:
@@ -55,8 +99,7 @@ class StorageHandler:
         return {row[1]: row[0] for row in query_select.all()}
 
     @staticmethod
-    async def get_or_create_related(
-            session: AsyncSession, orm_clss: models, lookup_field: str, value: str, cache_dict: dict, linked_table: int = None) -> int:
+    async def get_or_create_related(session: AsyncSession, orm_clss: models, lookup_field: str, value: str, cache_dict: dict, linked_table: int = None) -> int:
         if value is None:
             return None
 
@@ -117,9 +160,10 @@ class StorageHandler:
         # Delete old data
         new_lot_numbers = {lot['lot_number'] for lot in lots}
         old_lot_numbers = existing_lots.difference(new_lot_numbers)
+        cls.__deleted_entries = len(old_lot_numbers)
+        await session.commit()
         if old_lot_numbers:
             await session.execute(delete(models.MainDataORM).where(models.MainDataORM.lot_number.in_(old_lot_numbers)))
-            await session.commit()
 
         lots_to_update = []
         lots_to_insert = []
@@ -129,7 +173,7 @@ class StorageHandler:
             lot_num = lot["lot_number"]
             lot_id = related_data["lot_id"].get(lot_num, None)
             make_id = await cls.get_or_create_related(
-                    session, models.MakeORM, "tittle", lot["make"], related_data['make'])
+                session, models.MakeORM, "tittle", lot["make"], related_data['make'])
             model_id = await cls.get_or_create_related(
                 session, models.ModelORM, "tittle", lot["model"], related_data['model'], make_id)
             highlight_id = await cls.get_or_create_related(
@@ -191,15 +235,17 @@ class StorageHandler:
         # Update new data
         if lots_to_update:
             await asyncio.to_thread(cls.bulk_update, lots_to_update)
-            # await session.bulk_update_mappings(models.MainDataORM, lots_to_update)
+            cls.__updated_entries = len(lots_to_update)
 
         # Insert new data
         if lots_to_insert:
             session.add_all([models.MainDataORM(**lot) for lot in lots_to_insert])
+            cls.__added_entries = len(lots_to_insert)
+
+        await cls.set_records_info(session=session)
 
         await session.commit()
 
 
 if __name__ == "__main__":
-    set_of_proxies = StorageHandler.proxy
-    print(set_of_proxies)
+    ...
