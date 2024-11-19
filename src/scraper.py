@@ -21,12 +21,28 @@ SALES_LIST = os.getenv('SALES_LIST')
 SALES_PAGE = os.getenv('SALES_PAGE')
 
 class Parser:
-
+    """
+    A class to handle asynchronous parsing of sales data using Selenium and aiohttp.
+    Attributes:
+        drivers (PoolDriver): A pool of Chrome drivers for web scraping.
+        data (Storage): A storage object to save parsed data.
+    """
     drivers = None
     data = None
 
     @staticmethod
     async def __retry_with_backoff(func, max_attempts = 4, delay = 1):
+        """
+        Retries a coroutine function with exponential backoff on failure.
+        Args:
+            func (coroutine): The coroutine to retry.
+            max_attempts (int, optional): Maximum number of retry attempts. Defaults to 4.
+            delay (int, optional): Initial delay between retries in seconds. Defaults to 1.
+        Returns:
+            Any: The result of the coroutine function.
+        Raises:
+            Exception: If the maximum number of attempts is reached without success.
+        """
         attempt = 0
         while attempt < max_attempts:
             try:
@@ -39,6 +55,13 @@ class Parser:
 
     @classmethod
     async def __get_list_of_links(cls) -> list:
+        """
+        Fetches a list of links from the sales page using a Chrome driver.
+        Returns:
+            list: A list of parsed links.
+        Raises:
+            ValueError: If the sales list is empty.
+        """
         source = None
         max_retries = 3
         page = SALES_PAGE
@@ -69,6 +92,13 @@ class Parser:
 
     @classmethod
     def __pars_html(cls, source: str = None) -> list:
+        """
+        Parses the HTML source to extract links.
+        Args:
+            source (str, optional): The HTML source to parse. Defaults to None.
+        Returns:
+            list: A list of extracted links.
+        """
 
         links = []
 
@@ -85,10 +115,18 @@ class Parser:
 
     @classmethod
     def __pars_json(cls, source: dict) -> list:
+        """
+        Parses JSON data to extract sales information.
+        Args:
+            source (dict): The JSON data to parse.
+        Returns:
+            list: A list of parsed sales data.
+        """
         lots = []
 
         try:
             content = source['data']['results']['content']
+            print(len(content))
             for block in content:
                 lots.append(
                     {
@@ -125,6 +163,12 @@ class Parser:
 
     @classmethod
     async def __get_data_from_link(cls, link: str) -> None:
+        """
+        Fetches and parses data from a specific link.
+        Args:
+            link (str): The URL to fetch data from.
+        """
+
         async with aiohttp.ClientSession() as session:
             pattern = r'(?<=ResultAll\/)(\d+)'
 
@@ -150,6 +194,10 @@ class Parser:
 
     @classmethod
     async def start(cls):
+        """
+        Starts the parsing process by fetching proxies, initializing drivers, and gathering data.
+        """
+
         proxies = StorageHandler.get_proxy()    # create set of proxy
         shuffle(proxies)
 

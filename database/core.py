@@ -1,6 +1,5 @@
 import asyncio
 
-from selenium.webdriver.common.devtools.v85.dom import query_selector
 from sqlalchemy import delete, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -9,6 +8,10 @@ from database.engine import async_session_factory, sync_session_factory
 from logger import logger
 
 class StorageHandler:
+    """
+    A class to handle database operations such as creating tables, updating records,
+    and managing proxies and logs.
+    """
 
     __proxy = []
     __deleted_entries: int = None             # deleting old entries
@@ -17,13 +20,23 @@ class StorageHandler:
 
     @classmethod
     async def create_tables(cls):
+        """
+        Drops and recreates all tables in the database.
+        """
         async with engine.async_engine.begin() as conn:
             await conn.run_sync(engine.Base.metadata.drop_all)
             await conn.run_sync(engine.Base.metadata.create_all)
         await engine.async_engine.dispose()
 
     @classmethod
-    async def get_records_info_(cls, all_logs = False):
+    async def get_records_info_(cls, all_logs: bool = False) -> list[dict]:
+        """
+        Retrieves log records from the database.
+        Args:
+            all_logs (bool): If True, retrieves all log records; otherwise, retrieves the latest one.
+        Returns:
+            list[dict]: A list of dictionaries containing log information.
+        """
         try:
             session: AsyncSession = await cls.create_session()
             if all_logs:
@@ -52,7 +65,12 @@ class StorageHandler:
             logger.error(f"Error: {e}")
 
     @classmethod
-    async def set_records_info(cls, session: AsyncSession):
+    async def set_records_info(cls, session: AsyncSession) -> None:
+        """
+        Saves information about the number of added, updated, and deleted entries to the log table.
+        Args:
+            session (AsyncSession): The database session.
+        """
         session.add(
             models.LogORM(
                 deleted_entries = cls.__deleted_entries,
@@ -63,7 +81,12 @@ class StorageHandler:
         await session.commit()
 
     @classmethod
-    def get_proxy(cls):
+    def get_proxy(cls) -> list[str]:
+        """
+        Retrieves proxy addresses from the database.
+        Returns:
+            list[str]: A list of proxy addresses.
+        """
         if cls.__proxy:
             return cls.__proxy
 
@@ -77,6 +100,11 @@ class StorageHandler:
 
     @classmethod
     def set_proxy(cls, proxies: list[dict]) -> None:
+        """
+        Inserts a list of proxies into the database.
+        Args:
+            proxies (list[dict]): A list of dictionaries containing proxy data.
+        """
         if proxies:
             with sync_session_factory() as session:
                 session.add_all([models.ProxySetORM(**proxy) for proxy in proxies])
@@ -84,22 +112,56 @@ class StorageHandler:
 
     @staticmethod
     async def create_session() -> AsyncSession:
+        """
+        Creates an asynchronous session for interacting with the database.
+        Returns:
+            AsyncSession: An asynchronous session instance.
+        """
         async with async_session_factory() as session:
             return session
 
     @staticmethod
     async def get_all_existing_lot_numbers(session: AsyncSession) -> set:
+        """
+       Retrieves all existing lot numbers from the database.
+       Args:
+           session (AsyncSession): The database session.
+       Returns:
+           set: A set of existing lot numbers.
+       """
         query_select_lots_number = await session.execute(select(models.MainDataORM.lot_number))
         existing_lot_numbers = {row[0] for row in query_select_lots_number.all()}
         return existing_lot_numbers
 
     @staticmethod
     async def get_all_existing_values(session: AsyncSession, orm_clss, value_column: str, key_column: str) -> dict:
+        """
+        Retrieves all existing values from a specified ORM model and column.
+        Args:
+            session (AsyncSession): The database session.
+            orm_clss: The ORM model class.
+            value_column (str): The column name to retrieve values from.
+            key_column (str): The column name to use as keys in the resulting dictionary.
+        Returns:
+            dict: A dictionary mapping values to their corresponding keys.
+        """
         query_select = await session.execute(select(getattr(orm_clss, key_column), getattr(orm_clss, value_column)))
         return {row[1]: row[0] for row in query_select.all()}
 
     @staticmethod
-    async def get_or_create_related(session: AsyncSession, orm_clss: models, lookup_field: str, value: str, cache_dict: dict, linked_table: int = None) -> int:
+    async def get_or_create_related(session: AsyncSession, orm_clss: models, lookup_field: str, value: str, cache_dict: dict, linked_table: int = None) -> int | None:
+        """
+        Retrieves or creates a related record in the database.
+        Args:
+            session (AsyncSession): The database session.
+            orm_clss: The ORM model class.
+            lookup_field (str): The field to look up.
+            value (str): The value to find or create.
+            cache_dict (dict): A cache dictionary for storing retrieved IDs.
+            linked_table (int, optional): An optional foreign key value.
+        Returns:
+            int | None: The ID of the retrieved or newly created record.
+        """
         if value is None:
             return None
 
@@ -121,12 +183,24 @@ class StorageHandler:
 
     @staticmethod
     def bulk_update(data_to_update: list) -> None:
+        """
+        Updates multiple records in bulk.
+        Args:
+            data_to_update (list): A list of dictionaries containing data to update.
+        """
         with sync_session_factory() as session:
             session.bulk_update_mappings(models.MainDataORM, data_to_update)
             session.commit()
 
     @classmethod
     async def load_all_related_data(cls, session: AsyncSession) -> dict:
+        """
+        Loads all related data from various tables in the database.
+        Args:
+            session (AsyncSession): The database session.
+        Returns:
+            dict: A dictionary containing related data.
+        """
         related_models = {
             'lot_id': (models.MainDataORM, 'lot_number', 'id'),
             'make': (models.MakeORM, 'tittle', 'id'),
@@ -148,6 +222,11 @@ class StorageHandler:
 
     @classmethod
     async def update_database(cls, lots: list) -> None:
+        """
+        Updates the database with new lot data, including deleting old lots, updating existing lots, and inserting new ones.
+        Args:
+            lots (list): A list of dictionaries containing lot data.
+        """
         # Create session
         session: AsyncSession = await cls.create_session()
 
