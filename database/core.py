@@ -99,7 +99,7 @@ class StorageHandler:
             return cls.__proxy
 
     @classmethod
-    def set_proxy(cls, proxies: list[dict]) -> None:
+    def set_proxy(cls, proxies: list[str]) -> None:
         """
         Inserts a list of proxies into the database.
         Args:
@@ -107,7 +107,7 @@ class StorageHandler:
         """
         if proxies:
             with sync_session_factory() as session:
-                session.add_all([models.ProxySetORM(**proxy) for proxy in proxies])
+                session.add_all([models.ProxySetORM(proxy=proxy.strip()) for proxy in proxies])
                 session.commit()
 
     @staticmethod

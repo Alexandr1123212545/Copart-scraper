@@ -14,20 +14,38 @@
 
 ## Installing
 1. Clone the repository:
-     ```bash
+    ```bash
     https://github.com/Alexandr1123212545/Copart-scraper.git
+    ```
 2. Create and activate a virtual environment:
     ```bash
-   python3.11.10 -m venv venv
-   source venv/bin/activate
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
 3. Install dependencies:
     ```bash
-   pip install -r requirements.txt
+    pip install -r requirements.txt
+    ```
+4. Edit the ***.env*** file
+   BASE_URL=https://www.copart.com
+   SALES_LIST=https://www.copart.com/public/lots/search-results/all
+   SALES_PAGE=https://www.copart.com/public/salesListResultPage
 
-## Environment Variables
+   DB_HOST=host
+   DB_PORT=port
+   DB_USER=name_your_data_base
+   DB_PASS=password_your_data_base
+   DB_NAME=name_your_data_base
 
-To run the project, you need to configure the following environment variables:
+5. I recommend adding a proxy
+   1. Go to the root directory
+   2. Enter the command in the terminal
+      ```bash
+      python add_proxy.py --proxies "protocol://ip-address_1:port, protocol://ip-address_2:port"
+      ```
 
-DB_HOST=host DB_PORT=port DB_USER=name_your_data_base DB_PASS=password_your_data_base DB_NAME=name_your_data_base
-
-Make sure to replace the placeholders (`host`, `port`, `name_your_data_base`, `password_your_data_base`) with your actual database credentials.
+## Usage
+   While in the root directory, enter the command:
+   ```bash
+   python main.py
+   ```
